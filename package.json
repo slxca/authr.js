@@ -1,0 +1,36 @@
+{
+    "name": "authr.js",
+    "license": "MIT",
+    "version": "1.1.4",
+    "description": "authr.js is a modern authentication library designed to make integrating OAuth providers into your applications easier and more secure.",
+    "repository": {
+        "url": "git+https://github.com/slxca/authr.js.git"
+    },
+    "author": "slxca <contact@s-luca.com> (https://s-luca.com)",
+    "funding": "https://github.com/sponsors/slxca",
+    "homepage": "https://authr.js.org",
+    "files": [
+        "dist"
+    ],
+    "bugs": {
+        "url": "https://github.com/slxca/authr.js/issues",
+        "email": "bugs@s-luca.com"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsup src/** --format cjs,esm --dts",
+        "lint": "tsc"
+    },
+    "devDependencies": {
+        "typescript": "^5.5.2"
+    },
+    "dependencies": {
+        "axios": "^1.7.2",
+        "tsup": "^8.1.0"
+    }
+}

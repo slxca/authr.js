@@ -46,11 +46,11 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-          scope: '@taozhi8833998'
+          scope: '@slxca'
       - run: npm install
       - name: Update package.json name
-        run: sed -i '2,2s/node-sql-parser/@taozhi8833998\/node-sql-parser/g' package.json
-      - run: echo registry=https://npm.pkg.github.com/taozhi8833998 >> .npmrc
+        run: sed -i '2,2s/node-sql-parser/@slxca\/node-sql-parser/g' package.json
+      - run: echo registry=https://npm.pkg.github.com/slxca >> .npmrc
       - run: npm run build
       - run: npm publish
         env:

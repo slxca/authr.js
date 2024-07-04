@@ -49,7 +49,7 @@ jobs:
           scope: '@slxca'
       - run: npm install
       - name: Update package.json name
-        run: sed -i '2,2s/node-sql-parser/@slxca\/node-sql-parser/g' package.json
+        run: sed -i '2,2s/node-sql-parser/@slxca\/authr.js/g' package.json
       - run: echo registry=https://npm.pkg.github.com/slxca >> .npmrc
       - run: npm run build
       - run: npm publish

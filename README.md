@@ -46,10 +46,6 @@ You can then use the access token to fetch user profile information:
 const profile = await githubProvider.getProfile(accessToken);
 ```
 
-## Documentation
-
-For more detailed documentation, visit [authr.js documentation](https://authr.js.org).
-
 ## Contributing
 
 Contributions are welcome! Please read our [contributing guidelines](https://github.com/slxca/authr.js/blob/master/CONTRIBUTING.md) before submitting pull requests.

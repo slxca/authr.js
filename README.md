@@ -10,11 +10,10 @@ Install authr.js using npm:
 npm install authr.js
 ```
 
-Or using yarn:
-
-```sh
-yarn add authr.js
-```
+## Providers
+- [Discord](https://github.com/slxca/authr.js/wiki/Implement-Discord-Authentication)
+- [GitHub](https://github.com/slxca/authr.js/wiki/Implement-GitHub-Authentication)
+- [Google](https://github.com/slxca/authr.js/wiki/Implement-Google-Authentication)
 
 ## Usage
 

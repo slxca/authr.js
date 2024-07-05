@@ -15,7 +15,7 @@ npm install authr.js
 - [GitHub](https://github.com/slxca/authr.js/wiki/Implement-GitHub-Authentication)
 - [Google](https://github.com/slxca/authr.js/wiki/Implement-Google-Authentication)
 
-## Usage
+## Example Usage
 
 To use authr.js with GitHub OAuth, you need to create a `GitHubProvider` instance with your client settings:
 

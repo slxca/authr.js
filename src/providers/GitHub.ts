@@ -31,10 +31,7 @@ class GitHubProvider {
     }
 
     async getProfile(accessToken: string): Promise<GitHubProfile> {
-        if(!this.settings.scopes.includes("user")) {
-            throw new Error("'user' scope is required to get user profile");
-        }
-
+        
         try {
             const response = await axios.get("https://api.github.com/user", {
                 headers: {
@@ -63,10 +60,6 @@ class GitHubProvider {
 
     async getEmails(accessToken: string): Promise<GitHubEmail[]> {
         
-        if(!this.settings.scopes.includes("email")) {
-            throw new Error("'email' scope is required to get user emails");
-        }
-
         try {
             const response = await axios.get("https://api.github.com/user/emails", {
                 headers: {
@@ -88,10 +81,6 @@ class GitHubProvider {
     }
 
     async getPrimaryEmail(accessToken: string): Promise<GitHubEmail> {
-
-        if(!this.settings.scopes.includes("email")) {
-            throw new Error("'email' scope is required to get user primary email");
-        }
 
         try {
             const response = await axios.get("https://api.github.com/user/emails", {

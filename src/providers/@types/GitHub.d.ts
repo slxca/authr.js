@@ -29,6 +29,10 @@ export type GitHubEmail = {
     visibility: string;
 }
 
+/**
+ * Enum representing the different scopes available for GitHub API access.
+ * @see https://docs.github.com/en/developers/apps/scopes-for-oauth-apps
+ */
 export enum GitHubScopes {
 
     /** Grants full access to public and private repositories including read and write access to code, commit statuses, repository invitations, collaborators, deployment statuses, and repository webhooks. Note: In addition to repository related resources, the repo scope also grants access to manage organization-owned resources including projects, invitations, team memberships and webhooks. This scope also grants the ability to manage projects owned by users. */

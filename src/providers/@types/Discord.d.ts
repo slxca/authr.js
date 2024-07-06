@@ -24,6 +24,10 @@ export type DiscordProfile = {
     premium_type: number;
 }
 
+/**
+ * Enum representing the available scopes for Discord API.
+ * @see https://discord.com/developers/docs/topics/oauth2#shared-resources-oauth2-scopes
+ */
 export enum DiscordScopes {
 
     /** allows your app to fetch data from a user's "Now Playing/Recently Played" list — not currently available for apps */

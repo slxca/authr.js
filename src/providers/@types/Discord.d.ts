@@ -79,7 +79,7 @@ export enum DiscordScopes {
     GuildsJoin = 'guilds.join',
 
     /** allows /users/@me/guilds/{guild.id}/member to return a user's member information in a guild */
-    GuildsJoin = 'guilds.join',
+    GuildsMembersRead = 'guilds.members.read',
 
     /** allows /users/@me without email */
     Identify = 'identify',

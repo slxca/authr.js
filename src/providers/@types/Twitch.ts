@@ -125,9 +125,6 @@ export enum TwitchScopes {
     /** View a broadcaster’s AutoMod settings. */
     ModeratorReadAutoMod = "moderator:read:automod",
 
-    /** Manage a broadcaster’s AutoMod settings. */
-    ModeratorManageAutoMod = "moderator:manage:automod",
-
     /** Ban and unban users. */
     ModeratorManageBannedUsers = "moderator:manage:banned_users",
 

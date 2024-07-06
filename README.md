@@ -10,13 +10,12 @@ Install authr.js using npm:
 npm install authr.js
 ```
 
-Or using yarn:
+## Providers
+- [Discord](https://github.com/slxca/authr.js/wiki/Implement-Discord-Authentication)
+- [GitHub](https://github.com/slxca/authr.js/wiki/Implement-GitHub-Authentication)
+- [Google](https://github.com/slxca/authr.js/wiki/Implement-Google-Authentication)
 
-```sh
-yarn add authr.js
-```
-
-## Usage
+## Example Usage
 
 To use authr.js with GitHub OAuth, you need to create a `GitHubProvider` instance with your client settings:
 
@@ -46,10 +45,6 @@ You can then use the access token to fetch user profile information:
 ```ts
 const profile = await githubProvider.getProfile(accessToken);
 ```
-
-## Documentation
-
-For more detailed documentation, visit [authr.js documentation](https://authr.js.org).
 
 ## Contributing
 

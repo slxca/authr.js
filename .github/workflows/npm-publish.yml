@@ -57,7 +57,7 @@ jobs:
         run: npm version from-git
 
       - name: Push changes
-        run: git push --follow-tags
+        run: git push origin HEAD:master --follow-tags
 
   publish-npm:
     needs: update-version

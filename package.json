@@ -1,7 +1,7 @@
 {
     "name": "authr.js",
     "license": "MIT",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "authr.js is a modern authentication library designed to make integrating OAuth providers into your applications easier and more secure.",
     "repository": {
         "url": "git+https://github.com/slxca/authr.js.git"

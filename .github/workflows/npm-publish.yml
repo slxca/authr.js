@@ -4,7 +4,6 @@ name: Node.js Package to npm and gpr
 on:
   release:
     types: [created]
-  workflow_dispatch:
 
 jobs:
   build:
@@ -17,8 +16,20 @@ jobs:
       - run: npm ci
       - run: npm run lint && npm run build
 
-  publish-npm:
+  update-version:
     needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - run: npm ci
+      - run: npm version from-git
+      - run: git push --follow-tags
+
+  publish-npm:
+    needs: update-version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -32,9 +43,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
 
-  # publish to gpr
   publish-gpr:
-    needs: build
+    needs: update-version
     runs-on: ubuntu-latest
     permissions:
       contents: read

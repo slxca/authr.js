@@ -2,7 +2,7 @@ export type DiscordProviderSettings = {
     clientId: string;
     clientSecret: string;
     redirectUri: string;
-    scopes: string[];
+    scopes: DiscordScopes[];
 }
 
 export type DiscordProfile = {

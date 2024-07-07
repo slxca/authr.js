@@ -37,7 +37,7 @@ jobs:
         run: |
           git config --global user.email '${{secrets.GH_EMAIL}}'
           git config --global user.name '${{secrets.GH_USERNAME}}'
-          git remote set-url origin https://${{secrets.GH_TOKEN}}@github.com/${{github.repository}}
+          git remote set-url origin https://${{secrets.PUBLISH_GITHUB_TOKEN}}@github.com/${{github.repository}}
 
       - name: Check if tag exists
         id: check-tag

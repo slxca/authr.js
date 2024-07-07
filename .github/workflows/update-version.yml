@@ -1,4 +1,4 @@
-name: VERSION
+name: Update Package Version
 
 on:
   release:

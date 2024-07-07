@@ -20,6 +20,7 @@ jobs:
       - run: npm run lint && npm run build
 
   update-version:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -49,8 +50,7 @@ jobs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git add package.json
         git commit -m "chore(release): update package version to ${{ steps.update_version.outputs.new_version }}"
-        git tag -fa $TAG_NAME -m "chore(release): $TAG_NAME"
-        git push origin HEAD --tags
+        git push origin HEAD
 
   publish-npm:
     needs: update-version

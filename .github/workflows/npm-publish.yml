@@ -13,6 +13,8 @@ jobs:
   build:
     if: github.actor == 'github-actions[bot]'
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -43,12 +45,13 @@ jobs:
           else
             npm publish
           fi
-      - env:
-          NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
+
 
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.PUBLISH_GITHUB_TOKEN}}
     permissions:
       contents: read
       packages: write
@@ -75,5 +78,3 @@ jobs:
           else
             npm publish
           fi
-      - env:
-          NODE_AUTH_TOKEN: ${{secrets.PUBLISH_GITHUB_TOKEN}}

@@ -30,8 +30,18 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm install
       - run: npm run build
-      - run: npm publish
-        env:
+      - name: Get version from package.json
+        id: get-version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+      - run: |
+          if [[ "$VERSION" == *"rc"* ]]; then
+            npm publish --tag rc
+          else
+            npm publish
+          fi
+      - env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
 
   publish-gpr:
@@ -52,6 +62,16 @@ jobs:
         run: sed -i '2,2s/authr.js/@slxca\/authr.js/g' package.json
       - run: echo registry=https://npm.pkg.github.com/slxca >> .npmrc
       - run: npm run build
-      - run: npm publish
-        env:
+      - name: Get version from package.json
+        id: get-version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+      - run: |
+          if [[ "$VERSION" == *"rc"* ]]; then
+            npm publish --tag rc
+          else
+            npm publish
+          fi
+      - env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_GITHUB_TOKEN}}

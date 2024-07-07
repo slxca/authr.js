@@ -1,6 +1,7 @@
 name: Publish_Package
 
-on: []
+on:
+  workflow_dispatch:
       
 permissions: write-all
   

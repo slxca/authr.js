@@ -33,8 +33,9 @@ jobs:
 
     - name: Commit and push version update
       run: |
-        git config --local user.name "github-actions[bot]"
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "${{GH_USERNAME}}"
+        git config --local user.email "${{GH_EMAIL}}"
+        git remote set-url origin https://${{secrets.PUBLISH_GITHUB_TOKEN}}@github.com/${{github.repository}}
         git add package.json
         git commit -m "chore(release): update package version to ${{ steps.update_version.outputs.new_version }}"
         git push origin HEAD:master

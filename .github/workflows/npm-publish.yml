@@ -38,9 +38,9 @@ jobs:
       run: |
         TAG_NAME=${GITHUB_REF#refs/tags/}
         if [[ $TAG_NAME == *"-beta"* ]]; then
-          npm version prepatch --preid beta --no-git-tag-version
+          npm version $TAG_NAME --preid rc --no-git-tag-version
         else
-          npm version from-git --no-git-tag-version
+          npm version $TAG_NAME --no-git-tag-version
         fi
 
     - name: Commit and push version update

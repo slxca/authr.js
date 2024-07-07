@@ -1,11 +1,6 @@
 name: Publish Package to NPM & GPR
 
-on:
-  push:
-    paths:
-      - 'package.json'
-    branches:
-      - 'master'
+on: []
       
 permissions: write-all
   
@@ -77,3 +72,4 @@ jobs:
           else
             npm publish
           fi
+          

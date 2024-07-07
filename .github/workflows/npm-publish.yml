@@ -2,9 +2,8 @@ name: Node.js Package to npm and gpr
 
 on:
   workflow_run:
-    workflows: ["Update Package version"]
-    types:
-      - completed
+    workflows: [VERSION]
+    types: [completed]
   
 permissions: write-all
   
